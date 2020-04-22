@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <h3>Agregar foto</h3>
+    <form action="/agregarfoto" method="POST">
+        <input type="hidden" name="id" value="<%= producto.id %>">
+        <label for="">Url:</label>
+        <input type="text" name="url">
+        <br>
+        <label for="">Descripcion</label>
+        <input type="text" name="descripcion">
+
+        <br>
+        <button>Agregar foto</button>
+    </form>
+    <br>
+
+    <% comentarios.forEach(comentario => { %>
+        <img src="<%= comentario.url %> " alt="">
+        <p>
+            <%= comentario.comentario %>
+        </p>
+        <% }) %>
+</body>
+
+</html>

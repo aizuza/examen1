@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        <%= locals.id ? 'Editar' : 'Nuevo' %> producto</h1>
+    <form action="<%= locals.id ? '/editar' : '/nuevo' %>" method="POST">
+        <% if (locals.id) { %>
+            <input type="hidden" name="id" value="<%= id %>">
+            <% } %>
+
+                <label for="">Nombre:</label>
+                <input type="text" name="nombre" value="<%= locals.nombre ? nombre : '' %>">
+
+                <% if (locals.errors && locals.errors.nombre) { %>
+                    <p>
+                        <%= errors.nombre %>
+                    </p>
+                    <% } %>
+
+                        <br>
+
+                        <label for="">Precio:</label>
+                        <input type="number" name="precio" value="<%= locals.precio ? precio : '' %>">
+
+                        <% if (locals.errors && locals.errors.precio) { %>
+                            <p>
+                                <%= errors.precio %>
+                            </p>
+                            <% } %>
+
+                                <br>
+
+
+
+                                <button>Guardar</button>
+    </form>
+</body>
+
+
+</html>
