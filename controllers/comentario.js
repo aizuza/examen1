@@ -1,6 +1,6 @@
 let controller = {};
 
-const { Comentario } = require('./../models/comentario');
+const { Comentario } = require('./../models/comentarios');
 
 
 
@@ -13,25 +13,34 @@ controller.agregarComentario = (req, res, next) => {
 
 
             let id = req.body.id;
-            let nombre = req.body.nombre;
+
             let comentario = req.body.comentario;
 
 
             //Crear objeto con estructura de modelo
-            let comentario = {
+            let comentarioObject = {
 
-                nombre: nombre,
+
                 comentario: comentario,
 
                 //Relación con el producto al que corresponde
                 productoId: id
             }
 
-            await Comentario.create(comentario);
+            await Comentario.create(comentarioObject);
 
             res.redirect('/detalle/' + id);
-        } catch (err) {
 
+
+
+        } catch (err) {
+            console.error('Error en consulta de detalle', err);
+
+            res.render('productos/comentario', {
+                nombre: {},
+                comentario: {},
+                producto: {}
+            });
         }
     })();
 };

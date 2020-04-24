@@ -10,6 +10,10 @@ class Comentario extends Model {}
 Comentario.init({
     //Definir campos del modelo
 
+    nombre: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     comentario: {
         type: Sequelize.STRING,
         allowNull: false

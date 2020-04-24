@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/detalle.css">
 </head>
 
 <body>
-    <h1>
-        <%= producto.nombre %>
-    </h1>
 
 
+</body>
+<h1>
+    <%= producto.nombre %>
+</h1>
 
+
+<div class="form">
     <p>Precio:
         <%= producto.precio %>
     </p>
@@ -22,16 +26,19 @@
     <h3>Agregar foto</h3>
     <form action="/agregarfoto" method="POST">
         <input type="hidden" name="id" value="<%= producto.id %>">
-        <label for="">Url:</label>
-        <input type="text" name="url">
-        <br>
-
-
-        <button>Agregar foto</button>
+        <div class="url">
+            <label for="">Url:</label>
+            <input type="text" name="url">
+            <br>
+        </div>
         <a href="/" class="atras">Atras</a>
+        <button>Agregar foto</button>
+
     </form>
     <br>
 
+
+</div>
 
 
 </body>

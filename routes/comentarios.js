@@ -3,6 +3,6 @@ var router = express.Router();
 
 let comentariosController = require('./../controllers/comentario');
 
-router.post('/comentario/:id', comentariosController.agregarComentario);
+router.get('/comentario/:id', comentariosController.agregarComentario);
 
 module.exports = router;
