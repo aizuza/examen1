@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        <%= producto.nombre %>
+    </h1>
+
+
+
+    <p>Precio:
+        <%= producto.precio %>
+    </p>
+
+
+    <h3>Agregar foto</h3>
+    <form action="/agregarfoto" method="POST">
+        <input type="hidden" name="id" value="<%= producto.id %>">
+        <label for="">Url:</label>
+        <input type="text" name="url">
+        <br>
+
+
+        <button>Agregar foto</button>
+        <a href="/" class="atras">Atras</a>
+    </form>
+    <br>
+
+
+
+</body>
+
+</html>

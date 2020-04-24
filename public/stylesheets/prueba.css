@@ -1,0 +1,47 @@
+body {
+    background-color: #ffdd90;
+}
+
+h1 {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.nombre {
+    margin-left: 30px;
+}
+
+.precio {
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.button {
+    margin-top: 10px;
+    margin-left: 234px;
+    border-radius: 10px;
+}
+
+.button2 {
+    margin-top: 10px;
+    margin-left: 234px;
+    border-radius: 10px;
+}
+
+.form {
+    color: seashell;
+    margin-top: 100px;
+    margin-left: 480px;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-width: 300px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.atras {
+    background-color: seashell;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+}

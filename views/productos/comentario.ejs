@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        <%= producto.nombre %>
+    </h1>
+
+
+
+    <p>Precio:
+        <%= producto.precio %>
+    </p>
+
+
+    <h3>Agregar comentario</h3>
+    <form action="/agregarcomentario" method="POST">
+        <input type="hidden" name="id" value="<%= producto.id %>">
+        <label for="">Comentario</label>
+        <input type="text" name="comentario">
+
+        <br>
+        <button>Agregar comentario</button>
+        <a href="/" class="atras">Atras</a>
+    </form>
+    <br>
+
+    <% producto.forEach(producto => { %>
+        <img src="<%= producto.url %> " alt="">
+        <p>
+            <%= producto.comentario %>
+        </p>
+        <% }) %>
+
+</body>
+
+</html>
