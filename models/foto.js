@@ -13,10 +13,7 @@ Foto.init({
         type: Sequelize.STRING,
         allowNull: false
     },
-    descripcion: {
-        type: Sequelize.STRING,
-        allowNull: false
-    }
+
 }, {
     sequelize,
     modelName: 'foto'

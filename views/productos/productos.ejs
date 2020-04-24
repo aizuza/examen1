@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Productos</title>
     <link rel="stylesheet" href="/stylesheets/productos.css">
 </head>
 
@@ -14,7 +14,8 @@
         <%= titulo %>
 
     </h1>
-    <a class="lista_de_productos" href="/nuevo">Nuevo producto</a>
+    <a class="lista_de_productos" href="/nuevo">Nuevo Producto</a>
+
     <ul>
         <!-- ejseach -->
         <% productos.forEach(producto => { %>
@@ -28,15 +29,18 @@
                     <div class="ref ">
                         <a class="ver" href="/detalle/<%= producto.id %> ">Ver detalles</a>
                         <a class="editar" href="/editar/<%= producto.id %> ">Editar producto</a>
-                        <br>
                         <a class="borrar" href="/borrar/<%= producto.id %> ">Borrar producto</a>
                         <a class="coment" href="/comentario/<%= producto.id %> ">Agregar comentario</a>
 
                     </div>
                 </div>
             </li>
+
             <% }) %>
     </ul>
+
+
+
 
 </body>
 

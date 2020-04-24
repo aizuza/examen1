@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detalles de productos</title>
     <link rel="stylesheet" href="/stylesheets/detalle.css">
 </head>
 
@@ -22,25 +22,58 @@
         <%= producto.precio %>
     </p>
 
-
-    <h3>Agregar foto</h3>
-    <form action="/agregarfoto" method="POST">
-        <input type="hidden" name="id" value="<%= producto.id %>">
-        <div class="url">
-            <label for="">Url:</label>
-            <input type="text" name="url">
-            <br>
-        </div>
-        <a href="/" class="atras">Atras</a>
-        <button>Agregar foto</button>
-
-    </form>
-    <br>
+    <% comentarios.forEach(comentario => { %>
+        <p>Nombre del que comenta :
+            <%= comentario.nombre %>
+        </p>
 
 
+
+
+        <p>Comentario :
+
+            <%= comentario.comentario %>
+
+        </p>
+        <% }) %>
 </div>
+<!-- fotos -->
 
 
-</body>
+<% fotos.forEach(foto => { %>
+
+    <p>Imagen
+
+
+        <img src=<%=foto.url %>>
+        <!--no me funcionó-->
+    </p>
+    <% }) %>
+
+
+
+        <div class="aggre">
+            <h3>Agregar foto</h3>
+            <form action="/agregarfoto" method="POST">
+                <input type="hidden" name="id" value="<%= producto.id %>">
+                <div class="url">
+                    <label for="">Url:</label>
+                    <input type="text" name="url">
+                    <br>
+                </div>
+
+
+
+                <button class="button">Agregar foto</button>
+                <input class="button2" type="reset">
+                <a href="/" class="atras">Atras</a>
+            </form>
+            <br>
+
+
+        </div>
+
+
+        </body>
 
 </html>

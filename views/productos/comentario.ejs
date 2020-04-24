@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agregar Comentarios</title>
     <link rel="stylesheet" href="/stylesheets/comentario.css">
 </head>
 
 <body>
     <h1>
-        <%= producto.nombre %>
+        <%= id.comentario %>
     </h1>
 
 
@@ -18,19 +18,28 @@
 
 
 
-    <h3>Agregar comentario</h3>
+    <h3>Agregar Comentario</h3>
     <div class="form">
-        <form action="/agregarComentario" method="GET">
-            <input type="hidden" name="id" value="<%= producto.id %>">
-            <label class="coment" for="">Comentario</label>
-            <input type="text" name="comentario">
+        <form action="/comentario" method="POST">
+            <!-- la variable id del input es la del controller-->
+            <input type="hidden" name="id" value="<%= id %>">
+
+
+            <label class="coment" for="">Comentario :</label>
+            <input class="inputtt" type="text" name="comentario">
+
+            <br>
+            <label class="coment" for="">Nombre :</label>
+            <input class="inputt" type="text" name="nombre">
 
             <br>
 
 
-            <button>Agregar comentario</button>
+            <button class="button">Agregar comentario</button>
             <br>
+            <input class="button2" type="reset">
             <a href="/" class="atras">Atras</a>
+
         </form>
         <br>
     </div>

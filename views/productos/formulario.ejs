@@ -10,12 +10,13 @@
 
     <!--<link rel="stylesheet" href="stylesheets/prueba.css">-->
     <link rel="stylesheet" href="/stylesheets/prueba.css">
-    <title>Document</title>
+    <title>
+        <%= locals.id ? 'Editar' : 'Nuevo' %> Producto</title>
 </head>
 
 <body>
     <h1>
-        <%= locals.id ? 'Editar' : 'Nuevo' %> producto</h1>
+        <%= locals.id ? 'Editar' : 'Nuevo' %> Producto</h1>
     <form class="form" action="<%= locals.id ? '/editar' : '/nuevo' %>" method="POST">
         <% if (locals.id) { %>
             <input type="hidden" name="id" value="<%= id %>">

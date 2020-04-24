@@ -1,5 +1,5 @@
         body {
-            background-color: beige;
+            background-color: #ffdd90;
         }
         
         h1 {
@@ -14,36 +14,38 @@
         }
         
         ul {
-            margin-left: -40px;
+            margin-left: 500px;
             margin-top: 50px;
-            width: 100%;
-            max-width: 250px;
             border-top-right-radius: 20px;
-            height: 100%;
+            width: 100%;
+            max-width: 800px;
+            list-style: none;
         }
         
         ul li p {
             font-size: 20px;
             margin-bottom: 20px;
-            margin-left: 10px;
+            margin-left: 160px;
             color: cornsilk;
         }
         
         .cada_uno {
             background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
-            margin-left: -10px;
+            margin-left: -120px;
             box-shadow: 10px 10px 10px black;
+            width: 100%;
+            max-width: 500px;
+            padding-bottom: 10px;
         }
         
         .ref {
             padding-left: 20px;
             padding-top: 0px;
-            display: inline-block;
         }
         
         .coment {
-            margin-left: 3px;
+            margin-left: 15px;
             text-decoration: none;
             color: white;
         }
@@ -55,13 +57,13 @@
         }
         
         .borrar {
-            margin-left: -10px;
+            margin-left: 15px;
             text-decoration: none;
             color: white;
         }
         
         .editar {
-            margin-left: 30px;
+            margin-left: 15px;
             text-decoration: none;
             color: white;
         }

@@ -19,7 +19,7 @@ controller.productos = (req, res, next) => {
             //- Nombre de la vista (se omite "views/" al inicio, y se omite ".ejs" al final)
             //- Variables para la vista
             res.render('productos/productos', {
-                titulo: 'Lista de productos',
+                titulo: 'Lista de Productos',
                 productos: productos,
             });
         })
@@ -28,7 +28,7 @@ controller.productos = (req, res, next) => {
             console.error('Error en la consulta', err);
 
             res.render('productos/productos', {
-                titulo: 'Lista de productos',
+                titulo: 'Lista de Productos',
                 productos: [],
             });
         });
@@ -42,14 +42,14 @@ controller.productosVersionFacil = (req, res, next) => {
             let productos = await Producto.findAll();
 
             res.render('productos/productos', {
-                titulo: 'Lista de productos',
+                titulo: 'Lista de Productos',
                 productos: productos,
             });
         } catch (err) {
             console.error('Error en la consulta', err);
 
             res.render('productos/productos', {
-                titulo: 'Lista de productos',
+                titulo: 'Lista de Productos',
                 productos: [],
             });
         }
@@ -228,12 +228,14 @@ controller.detalleProducto = (req, res, next) => {
             let id = req.params.id;
 
             let producto = await Producto.findByPk(id);
-
+            let comentarios = await producto.getComentarios();
             let fotos = await producto.getFotos();
 
             res.render('productos/detalle', {
                 producto: producto,
-                fotos: fotos
+                fotos: fotos,
+                comentarios: comentarios
+
             });
 
         } catch (err) {
@@ -241,6 +243,7 @@ controller.detalleProducto = (req, res, next) => {
 
             res.render('productos/detalle', {
                 producto: {},
+                comentarios: [],
                 fotos: []
             });
         }
@@ -253,13 +256,13 @@ controller.agregarFoto = (req, res, next) => {
             let id = req.body.id;
             let url = req.body.url;
             let nombre = req.body.nombre;
-            let descripcion = req.body.descripcion;
+
 
             //Crear objeto con estructura de modelo
             let foto = {
                 url: url,
                 nombre: nombre,
-                descripcion: descripcion,
+
 
                 //Relación con el producto al que corresponde
                 productoId: id
